@@ -13,7 +13,12 @@ public class CommandeRemplacer extends CommandeDocument {
             System.err.println("Format attendu : remplacer;depart;fin;chaine");
             return;
         }
-        String texte = parameters[3];;
+        String texte;
+        if (parameters.length == 3){
+            texte = "";
+        } else {
+            texte = parameters[3];
+        }
         this.document.remplacer(Integer.parseInt(parameters[1]), Integer.parseInt(parameters[2]), texte);
         super.executer();
     }
