@@ -31,6 +31,12 @@ public class Document {
         this.remplacer(start, end, midPart);
     }
 
+    public void minuscules(int start, int end) {
+        String midPart = texte.substring(start, end).toLowerCase();
+        this.remplacer(start, end, midPart);
+    }
+
+
     public void effacer(int start, int end){
         this.remplacer(start, end, "");
     }
