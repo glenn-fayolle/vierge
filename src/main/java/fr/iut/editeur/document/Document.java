@@ -39,6 +39,10 @@ public class Document {
         setTexte(" ");
     }
 
+    public void inserer(int start, String texte){
+        remplacer(start,start, texte);
+    }
+
     @Override
     public String toString() {
         return this.texte;
