@@ -26,5 +26,6 @@ public class CommandeRemplacer extends CommandeDocument {
     @Override
     public void getDescriptionCommande() {
         System.out.println("Format attendu : remplacer;depart;fin;chaine");
+
     }
 }
