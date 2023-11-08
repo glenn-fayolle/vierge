@@ -36,7 +36,11 @@ public class Document {
     }
 
     public void clear(){
-        this.texte = "a";
+        setTexte(" ");
+    }
+
+    public void inserer(int start, String texte){
+        remplacer(start,start, texte);
     }
 
     @Override
