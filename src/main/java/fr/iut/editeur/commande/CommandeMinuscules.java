@@ -20,5 +20,6 @@ public class CommandeMinuscules extends CommandeDocument{
     @Override
     public void getDescriptionCommande() {
         System.out.println("Format attendu : minuscules;depart;fin");
+
     }
 }
