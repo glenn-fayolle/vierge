@@ -1,0 +1,17 @@
+name : test_on_push
+
+on: push #Par exemple, "push"
+
+jobs: #Un job est un processus qui contient lui-même des étapes
+
+  nom-job1: #Nom du job 1
+    runs-on: ubuntu-latest #Sélection du système d'exploitation où s'exécute le job
+    steps: #Etapes à réaliser sur le système
+      - name: deplacmeent fichier #Nom de l'action 1
+        uses : actions/checkout@v3
+      - name: installer jav #Nom de l'action 2
+        uses : actions/setup-java@v1 #Utilisation d'une action externe
+        with : #Paramètres de l'action externe (si besoin)
+          java-version: 20
+      - name : lancer texte
+        run: mvn test
