@@ -14,4 +14,4 @@ jobs: #Un job est un processus qui contient lui-même des étapes
         with : #Paramètres de l'action externe (si besoin)
           java-version: 20
       - name : lancer texte
-        run: mvm test
+        run: mvn test
