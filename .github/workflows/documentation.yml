@@ -1,0 +1,28 @@
+name: test_on_push
+
+on:
+  push:
+    branches:
+      - master
+
+jobs: #Un job est un processus qui contient lui-même des étapes
+
+  nom-creation_doc_ooficlelle: #Nom du job 1
+    runs-on: ubuntu-latest #Sélection du système d'exploitation où s'exécute le job
+    steps: #Etapes à réaliser sur le système
+      - name: deplacmeent fichier #Nom de l'action 1
+        uses: actions/checkout@v3
+      - name: installer jav #Nom de l'action 2
+        uses: actions/setup-java@v1 #Utilisation d'une action externe
+        with: #Paramètres de l'action externe (si besoin)
+          java-version: 20
+      - name: Générer le site de la javadoc
+        run: mvn javadoc::javadoc
+      - name: Publier le contenu du site sur une branche dédiée.
+        uses: peaceiris/actions-gh-pages@v3
+        with: #Paramètres de l'action externe (si besoin)
+          github_token : ${{ secrets.GITHUB_TOKEN }}
+          publish_dir : ./target/site/apidocs/
+
+permissions :
+  contents: write
