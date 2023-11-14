@@ -16,6 +16,13 @@ public class CommandeFactory {
 
     private CommandeFactory() {}
 
+    /**
+     * Description de la méthode
+     * @param name nom de l'action
+     * @param document doc a erxecuter
+     * @param parameters parametres a passer
+     * @return rien
+     */
     public Commande createCommand(String name, Document document, String[] parameters) {
         switch (name) {
             case "ajouter":
@@ -30,7 +37,6 @@ public class CommandeFactory {
                 return new CommandeClear(document, parameters);
             default:
                 return null;
-
         }
     }
 }

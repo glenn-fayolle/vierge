@@ -20,6 +20,13 @@ public class Document {
         this.texte += texte;
     }
 
+    /**
+     * Description de la méthode
+     * @param start debut ou rermplacer
+     * @param end fin a remplcaer
+     * @param remplacement par quoi remlplacer
+     * @return rien
+     */
     public void remplacer(int start, int end, String remplacement) {
         String leftPart = texte.substring(0, start);
         String rightPart = texte.substring(end);
